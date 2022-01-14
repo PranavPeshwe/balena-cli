@@ -80,7 +80,10 @@ export async function leave(
 	logger.logDebug('Deconfiguring...');
 	await deconfigure(deviceHostnameOrIp);
 
-	logger.logSuccess('Device successfully left the platform.');
+	logger.logSuccess(
+		'Device successfully left the platform. The device will still be visible in the fleet, \
+		but changes to the fleet will no longer affect this device (Heartbeat only).',
+	);
 }
 
 async function execCommand(
